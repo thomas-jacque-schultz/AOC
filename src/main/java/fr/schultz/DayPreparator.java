@@ -18,7 +18,6 @@ public class DayPreparator {
 
     public static void main(String[] args) throws Exception {
         mainNow();
-        //mainParam();
     }
 
     public static void mainParam() throws Exception {
