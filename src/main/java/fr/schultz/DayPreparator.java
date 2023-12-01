@@ -33,6 +33,7 @@ public class DayPreparator {
         int year = LocalDate.now().getYear();
         int day = LocalDate.now().getDayOfMonth();
         String input = dayPreparator.fileGenerator.getData(year, day, Cookie.cookie);
+        System.out.println(dayPreparator.dayGenerator.resolve(year, day, 1, input));
         System.out.println(dayPreparator.dayGenerator.resolve(year, day, 2, input));
     }
 

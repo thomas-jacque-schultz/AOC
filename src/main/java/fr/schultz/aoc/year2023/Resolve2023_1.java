@@ -46,7 +46,6 @@ public class Resolve2023_1 extends AocTemplate {
             line = line.replaceAll("zero", "z0o");
             String num = line.replaceAll("[a-z]", "");
             num = num.charAt(0) + "" + num.charAt(num.length() - 1);
-            System.out.println(num);
             return Integer.parseInt(num);
         }).reduce(0, Integer::sum);
         return res.toString();
