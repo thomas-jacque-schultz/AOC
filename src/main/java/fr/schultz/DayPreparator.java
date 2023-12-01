@@ -31,9 +31,9 @@ public class DayPreparator {
     public static void mainNow() throws Exception {
         DayPreparator dayPreparator = new DayPreparator();
         int year = LocalDate.now().getYear();
-        int day = 1;//LocalDate.now().getDayOfMonth();
+        int day = LocalDate.now().getDayOfMonth();
         String input = dayPreparator.fileGenerator.getData(year, day, Cookie.cookie);
-        dayPreparator.dayGenerator.resolve(year, day, 1, input);
+        System.out.println(dayPreparator.dayGenerator.resolve(year, day, 2, input));
     }
 
 }
