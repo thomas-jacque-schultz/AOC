@@ -17,13 +17,18 @@ public class DayPreparator {
 
 
     public static void main(String[] args) throws Exception {
-        mainNow();
+        //mainNow();
+        mainParam(2023,1);
+        mainParam(2023,2);
+        mainParam(2023,3);
+        mainParam(2023,4);
     }
 
-    public static void mainParam() throws Exception {
+    public static void mainParam(int y, int d) throws Exception {
         DayPreparator dayPreparator = new DayPreparator();
-        String input = dayPreparator.fileGenerator.getData(2022, 2, Cookie.cookie);
-        dayPreparator.dayGenerator.resolve(2022, 2, 1, input);
+        String input = dayPreparator.fileGenerator.getData(y, d, Cookie.cookie);
+        System.out.println(dayPreparator.dayGenerator.resolve(y, d, 1, input));
+        System.out.println(dayPreparator.dayGenerator.resolve(y, d, 2, input));
     }
 
 
