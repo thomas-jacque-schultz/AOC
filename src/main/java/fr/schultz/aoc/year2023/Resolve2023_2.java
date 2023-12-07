@@ -2,6 +2,7 @@ package fr.schultz.aoc.year2023;
 
 
 import fr.schultz.generator.AocTemplate;
+import fr.schultz.generator.Timer;
 
 import java.util.*;
 
@@ -17,7 +18,8 @@ public class Resolve2023_2 extends AocTemplate {
                 """);
     }
 
-    public String resolvePart1(String input) {
+    public String resolvePart1(String input, Timer timer) {
+        timer.start();
         List<String> res = getData(input);
         HashMap<String, Integer> map = new HashMap<>();
         map.put("blue", 14);
@@ -47,11 +49,13 @@ public class Resolve2023_2 extends AocTemplate {
             }
             return es;
         }).sum();
+        timer.stop();
         return sol + "";
     }
 
 
-    public String resolvePart2(String input) {
+    public String resolvePart2(String input , Timer timer) {
+        timer.start();
         List<String> res = getData(input);
 
 
@@ -79,11 +83,9 @@ public class Resolve2023_2 extends AocTemplate {
                 }
                 return true;
             }).toList();
-
-
-            //todo
             return map.get("blue") * map.get("red") * map.get("green");
         }).sum();
+        timer.stop();
         return sol + "";
     }
 

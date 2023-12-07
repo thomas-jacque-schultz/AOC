@@ -2,6 +2,7 @@ package fr.schultz.aoc.year2023;
 
 
 import fr.schultz.generator.AocTemplate;
+import fr.schultz.generator.Timer;
 
 public class Resolve2023_10 extends AocTemplate {
 
@@ -23,14 +24,14 @@ public class Resolve2023_10 extends AocTemplate {
                 10000""");
     }
 
-    public String resolvePart1(String input) {
+    public String resolvePart1(String input, Timer timer) {
 
         return null;
 
     }
 
 
-    public String resolvePart2(String input) {
+    public String resolvePart2(String input, Timer timer) {
 
       return null;
 

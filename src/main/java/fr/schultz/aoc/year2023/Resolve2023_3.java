@@ -2,6 +2,7 @@ package fr.schultz.aoc.year2023;
 
 
 import fr.schultz.generator.AocTemplate;
+import fr.schultz.generator.Timer;
 
 import java.util.*;
 
@@ -33,7 +34,8 @@ public class Resolve2023_3 extends AocTemplate {
                 .664.598..""");
     }
 
-    public String resolvePart1(String input) {
+    public String resolvePart1(String input, Timer timer) {
+        timer.start();
         List<String> res = getData(input);
         String[][] map = new String[res.size()+2][res.get(0).length()+2];
         Arrays.fill(map[0], ".");
@@ -50,6 +52,7 @@ public class Resolve2023_3 extends AocTemplate {
                 }
             }
         }
+        timer.stop();
         return sum.sum+"";
     }
 
@@ -121,8 +124,8 @@ public class Resolve2023_3 extends AocTemplate {
     }
 
 
-    public String resolvePart2(String input) {
-
+    public String resolvePart2(String input, Timer timer) {
+        timer.start();
         List<String> res = getData(input);
         String[][] map = new String[res.size()+2][res.get(0).length()+2];
         Arrays.fill(map[0], ".");
@@ -145,8 +148,8 @@ public class Resolve2023_3 extends AocTemplate {
                 sum.sum += v.get(0) * v.get(1);
             }
         });
+        timer.stop();
         return sum.sum+"";
-
     }
 
     private SumShift numberDetector2(String[][] map, int i, int j, SumShift sumShift) {

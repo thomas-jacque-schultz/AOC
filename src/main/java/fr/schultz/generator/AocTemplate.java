@@ -12,9 +12,9 @@ public abstract class AocTemplate {
         this.exampleData = exampleData;
     }
 
-    public abstract String resolvePart1(String input);
+    public abstract String resolvePart1(String input, Timer timer);
 
-    public abstract String resolvePart2(String input);
+    public abstract String resolvePart2(String input, Timer timer);
 
     /**
      * @return example data parsed

@@ -2,11 +2,11 @@ package fr.schultz.aoc.year2023;
 
 
 import fr.schultz.generator.AocTemplate;
+import fr.schultz.generator.Timer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Resolve2023_4 extends AocTemplate {
 
@@ -20,7 +20,8 @@ public class Resolve2023_4 extends AocTemplate {
                 Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11""");
     }
 
-    public String resolvePart1(String input) {
+    public String resolvePart1(String input, Timer timer) {
+        timer.start();
         List<String> res = getData(input);
         int sol = res.stream().mapToInt(elem -> {
             String trim = elem.split(":")[1].replaceAll("  ", " ").replaceAll(" ", ",").trim();
@@ -38,11 +39,13 @@ public class Resolve2023_4 extends AocTemplate {
             }
             return (int) Math.pow(2, match - 1);
         }).sum();
+        timer.stop();
         return sol+"";
     }
 
 
-    public String resolvePart2(String input) {
+    public String resolvePart2(String input, Timer timer) {
+        timer.start();
         List<String> res = getData(input);
         List<Integer> sol = res.stream().map(elem -> {
             String trim = elem.split(":")[1].replaceAll("  ", " ").replaceAll(" ", ",").trim();
@@ -62,8 +65,8 @@ public class Resolve2023_4 extends AocTemplate {
         int sum = 0;
         for(int i = 0; i < sol.size(); i++) {
             sum += addUp(i, sol);
-
         }
+        timer.stop();
         return sum+"";
 
     }
