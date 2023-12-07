@@ -23,7 +23,6 @@ public class Resolve2023_7 extends AocTemplate {
             Map.entry('K', 13),
             Map.entry('A', 14)
     );
-
     private final static Map<Character, Integer> valuesPoint2 = Map.ofEntries(
             Map.entry('2', 2),
             Map.entry('3', 3),
@@ -54,7 +53,7 @@ public class Resolve2023_7 extends AocTemplate {
         List<Hand> data = new ArrayList<>(this.getData(input)).parallelStream().map(line -> new Hand(line, false)).sorted().toList();
         long sum = 0;
         for (int i = 0; i < data.size(); i++) {
-            sum += data.get(i).points * (i + 1);
+            sum += (long) data.get(i).points * (i + 1);
         }
         timer.stop();
         return sum + "";
@@ -137,4 +136,79 @@ public class Resolve2023_7 extends AocTemplate {
         }
     }
 
+    // works but bad idea to use this
+
+    /*public class HandBetter implements Comparable {
+        private long cardVal;
+        private long points;
+
+
+        public HandBetter(String cards) {
+            this.cardVal = 0;
+            this.points = Long.parseLong(cards.split(" ")[1]);
+            Map<Character, Integer> occ = new HashMap<>();
+            occ.put('0', 0);
+            String val = "";
+
+            for (Character card : cards.split(" ")[0].toCharArray()) {
+                if (occ.containsKey(card)) {
+                    occ.put(card, occ.get(card) + 1);
+                } else {
+                    occ.put(card, 1);
+                }
+                val += valuesPointBetter.get(card);
+            }
+
+            List<Integer> res = occ.values().stream().sorted(Collections.reverseOrder()).toList();
+            val = res.get(0) + "" + res.get(1) + val;
+            this.cardVal = Long.parseLong(val);
+
+        }
+
+        @Override
+        public int compareTo(Object o) {
+            HandBetter other = (HandBetter) o;
+            return this.cardVal > other.cardVal ? 1 : -1;
+        }
+
+        @Override
+        public String toString() {
+            return "HandBetter{" +
+                    "res=" + cardVal +
+                    ", bet=" + points +
+                    '}';
+        }
+    }*/
+
+    /*    public String resolvePartBetter(String input, Timer timer) {
+        timer.start();
+        List<HandBetter> data = new ArrayList<>(this.getData(input))
+                .parallelStream()
+                .map(HandBetter::new)
+                .sorted()
+                .toList();
+        long sum = 0;
+        for (int i = 0; i < data.size(); i++) {
+            sum += data.get(i).points * (i + 1);
+        }
+
+        timer.stop();
+        return sum + "";
+    }*/
+
+    /*    private final static Map<Character, String> valuesPointBetter = Map.ofEntries(
+            Map.entry('2', "02"),
+            Map.entry('3', "03"),
+            Map.entry('4', "04"),
+            Map.entry('5', "05"),
+            Map.entry('6', "06"),
+            Map.entry('7', "07"),
+            Map.entry('8', "08"),
+            Map.entry('9', "09"),
+            Map.entry('T', "10"),
+            Map.entry('J', "11"),
+            Map.entry('Q', "12"),
+            Map.entry('K', "13"),
+            Map.entry('A', "14")
+    );*/
 }

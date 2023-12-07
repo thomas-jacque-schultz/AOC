@@ -19,14 +19,14 @@ public class DayPreparator {
 
 
     public static void main(String[] args) throws Exception {
-        mainNow();
-     //   mainParam(2023,1);
-     //   mainParam(2023,2);
-     //   mainParam(2023,4);
-     //   mainParam(2023,3);
-     //   mainParam(2023,5);
-     //   mainParam(2023,6);
-     //   mainParam(2023,7);
+     //   mainNow();
+      //  mainParam(2023,1);
+      //  mainParam(2023,2);
+      //  mainParam(2023,3);
+      //  mainParam(2023,4);
+      //  mainParam(2023,5);
+      //  mainParam(2023,6);
+        mainParam(2023,7);
     }
 
     public static void mainParam(int y, int d) throws Exception {

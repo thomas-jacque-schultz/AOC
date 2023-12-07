@@ -4,8 +4,8 @@ package fr.schultz.aoc.year2023;
 import fr.schultz.generator.AocTemplate;
 import fr.schultz.generator.Timer;
 
-import java.time.Instant;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Resolve2023_6 extends AocTemplate {
 
@@ -54,18 +54,18 @@ public class Resolve2023_6 extends AocTemplate {
         List<String> linesList = getData(input);
 
         // parse the input
-        List<Long> times = List.of(linesList
+        List<Long> times = Stream.of(linesList
                 .get(0)
                 .replaceAll("[a-zA-Z: ]", "")
                 .trim()
                 .replaceAll("\\s+", " ")
-                .split(" ")).stream().map(Long::parseLong).toList();
-        List<Long> distances = List.of(linesList
+                .split(" ")).map(Long::parseLong).toList();
+        List<Long> distances = Stream.of(linesList
                 .get(1)
                 .replaceAll("[a-zA-Z: ]", "")
                 .trim()
                 .replaceAll("\\s+", " ")
-                .split(" ")).stream().map(Long::parseLong).toList();
+                .split(" ")).map(Long::parseLong).toList();
 
         // calculate the answer
         long res = 1L;
@@ -86,7 +86,6 @@ public class Resolve2023_6 extends AocTemplate {
 
         root1Round = root1Round.equals(root1) ? root1Round+1 : root1Round;
 
-        long matches = (long) (Math.max(root1Round, root2Round) - Math.min(root1Round, root2Round));
-        return matches;
+        return (long) (Math.max(root1Round, root2Round) - Math.min(root1Round, root2Round));
     }
 }

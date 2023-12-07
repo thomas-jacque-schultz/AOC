@@ -3,7 +3,6 @@ package fr.schultz.generator;
 import lombok.NoArgsConstructor;
 
 import java.lang.reflect.Method;
-import java.time.Instant;
 
 @NoArgsConstructor
 public class DayGenerator {
