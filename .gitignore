@@ -37,3 +37,11 @@ build/
 ### Mac OS ###
 .DS_Store
 /.idea/
+/C#/AdventOfCode/Inputs/01.txt
+/C#/AdventOfCode/Inputs/02.txt
+/C#/AdventOfCode/Inputs/03.txt
+/C#/AdventOfCode/Inputs/04.txt
+/C#/AdventOfCode/Inputs/05.txt
+/C#/AdventOfCode/Inputs/06.txt
+/C#/AdventOfCode/Inputs/07.txt
+/C#/AdventOfCode/Inputs/08.txt
